@@ -1,16 +1,15 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import NavBar from '../Components/NavBar'
 
 function RootLayout() {
   return (
     <div>
-      <div>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/products'>Products</NavLink>
-        <NavLink to='/cart'>Cart</NavLink>
+      <div className='container mx-auto pt-6'>
+        <NavBar/>
       </div>
 
-      <div>
+      <div className='container mx-auto'>
         <Outlet/>
       </div>
     </div>
