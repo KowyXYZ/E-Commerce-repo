@@ -6,6 +6,7 @@ import Cart from "./Pages/Cart";
 import ProductsLayout from "./Layouts/ProductsLayout";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Products from "./Pages/Products";
 
 
 const router = createBrowserRouter(
@@ -16,7 +17,7 @@ const router = createBrowserRouter(
 
       
       <Route path="products" element={<ProductsLayout/>}>
-        
+        <Route index element={<Products/>}/>
       </Route>
 
       <Route path="cart" element={<Cart/>}/>

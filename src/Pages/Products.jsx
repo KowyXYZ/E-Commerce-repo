@@ -1,16 +1,12 @@
-import React from 'react'
-import fetchAllProducts from '../utilities/fetchAllProducts'
+import AllProducts from "../Components/Prods/AllProducts"
 
 function Products() {
 
-    useEffect(() => {
-        fetchAllProducts().then((data) => console.log(data.Products))
-    }, [])
-
+    
   return (
-    <div>
-
-    </div>
+    <>
+        <AllProducts/>
+    </>
   )
 }
 
