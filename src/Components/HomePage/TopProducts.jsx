@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
   // import Swiper JS
   import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,7 +24,7 @@ function TopProducts() {
   }, [])
 
   const sliced = product.slice(1, 11)
-console.log(sliced)
+
   return (
     <div className='flex flex-col justify-center items-center mt-32'>   
         <h1 className='font-semibold text-[25px]'>Populer Products From All Brands</h1>
@@ -48,8 +48,8 @@ console.log(sliced)
             {sliced?.map(
               (el, index) => {
                 return(
-                  <SwiperSlide>
-                  <TopProductsSingle data={el}/>
+                  <SwiperSlide key={index}>
+                  <TopProductsSingle data={el} key={index}/>
                   </SwiperSlide>
                 )
               }
