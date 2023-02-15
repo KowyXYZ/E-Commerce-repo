@@ -24,6 +24,9 @@ function AllProducts() {
     
     const filtered = data.filter((item) => item.category === cats)
 
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(10)
+
   return (
     <div className='mt-12'>
         <div className='flex gap-10 flex-wrap justify-center items-center text-center'>

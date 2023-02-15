@@ -14,7 +14,7 @@ function RootLayout() {
         <Outlet/>
       </div>
 
-      <div className='container mx-auto mt-20'>
+      <div className='container mx-auto mt-20 pb-6'>
         <Footer/>
       </div>
     </div>

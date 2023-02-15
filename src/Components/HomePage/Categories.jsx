@@ -9,8 +9,8 @@ function Categories() {
 
   const [category, setCategory] = useState([])
 
-  const sliced = Math.random(5)
-  console.log(sliced)
+  const sliced = category.slice(0, 5)
+
 
   useEffect(() => {
     fetchAllProducts().then((data) => setCategory(data.products))
