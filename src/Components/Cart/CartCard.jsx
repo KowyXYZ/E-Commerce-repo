@@ -17,11 +17,11 @@ function CartCard( {data} ) {
         <div className='flex gap-24 items-center justify-center'>
             <p>Price: ${data.price}</p>
             <p 
-            className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold'
+            className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold text-[25px]'
             onClick={() => dispatch(getCartItems(data))}>+</p>
             <p>Items: {data.cartItems}</p>
             <p
-              className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold'
+              className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold text-[25px]'
             onClick={() => dispatch(decreaseCartItem(data))}>-</p>
             <p>Total: ${data.price * data.cartItems}</p>
             <p 

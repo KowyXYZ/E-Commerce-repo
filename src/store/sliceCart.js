@@ -5,7 +5,9 @@ import { json } from "react-router-dom";
 const sliceCart =  createSlice({
     name: 'carts',
     initialState: {
-        cart: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
+        cart: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],
+        cartTotalQuantity: 0,
+        cartTotalAmount: 0
     },
     reducers: {
         getCartItems: (state, action) => {
@@ -46,12 +48,32 @@ const sliceCart =  createSlice({
             localStorage.setItem('cartItems', JSON.stringify(state.cart))
 
         },
+        
+        totalAmount: (state, action) => {
+            let {total, quantity} = state.cart.reduce((cartTotal, item) => {
+                const {price, cartItems} = item
+                const itemTotal = price * cartItems
+                
+                cartTotal.total += itemTotal
+                cartTotal.quantity += cartItems
 
+
+                return cartTotal
+            },
+                {total : 0,
+                    quantity: 0
+                }
+            )
+            state.cartTotalAmount = total
+            state.cartTotalQuantity = quantity
+        }
+       
+        
         
     }
 
 })
 
 
-export const { getCartItems, removeFromCart, removeAllCart, decreaseCartItem } = sliceCart.actions
+export const { getCartItems, removeFromCart, removeAllCart, decreaseCartItem, totalAmount } = sliceCart.actions
 export default sliceCart.reducer
