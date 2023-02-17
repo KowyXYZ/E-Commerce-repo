@@ -37,6 +37,20 @@ function AllProducts() {
   return (
     <div className='mt-12'>
         <div className='flex gap-10 flex-col justify-between items-center text-center'>
+            <div className='flex gap-10'>
+            <button
+            onClick={() => setToggle(false)}
+            className='bg-[#fff]  border-[#3C9379] border-2 px-6  drop-shadow-2xl'
+            >All</button>
+            
+            <div className='bg-[#fff] border-[#3c9379] border-2 p-2 rounded-3xl'>
+                <label className='text-[18px] p-2' htmlFor="">Search: </label>
+                <input 
+                onChange={(e) => setSearch(e.target.value)}
+                className='border-2 border-[#000] rounded-3xl px-4 py-2' type='text'/>
+            </div>
+            </div>
+            
             <div className='flex gap-10 flex-wrap justify-center items-center text-center'>
                     {categories.map(
                 (el, index) => {
@@ -51,12 +65,7 @@ function AllProducts() {
             </div>
 
             
-            <div className='bg-[#3C9379] p-2 rounded-3xl'>
-                <label className='text-[18px]' htmlFor="">Search: </label>
-                <input 
-                onChange={(e) => setSearch(e.target.value)}
-                className='border-2 rounded-3xl px-4 py-2' type='text'/>
-            </div>
+            
             
            
         </div>

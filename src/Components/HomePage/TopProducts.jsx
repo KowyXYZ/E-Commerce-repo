@@ -28,10 +28,9 @@ function TopProducts() {
   return (
     <div className='flex flex-col justify-center items-center mt-32'>   
         <h1 className='font-semibold text-[25px]'>Populer Products From All Brands</h1>
-        <div className='flex justify-center items-center container mx-auto'>
+        <div className='flex justify-center items-center container mx-auto '>
             <Swiper
             slidesPerView={3}
-
             centeredSlides={true}
             autoplay={{
               delay: 3000,
@@ -41,7 +40,7 @@ function TopProducts() {
               clickable: true,
             }}
             navigation={true}
-            modules={[Autoplay, Navigation, Pagination]}
+            modules={[Autoplay, Navigation, Pagination,]}
             className='w-screen'
             >
 
