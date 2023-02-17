@@ -24,27 +24,52 @@ function AllProducts() {
     
     const filtered = data.filter((item) => item.category === cats)
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const [postPerPage, setPostPerPage] = useState(10)
+
+    const [search, setSearch] = useState('') 
+    
+    const [toggle, setToggle] = useState(false)
+
+    const anomaly = (el) => {
+        setCats(el)
+        setToggle(true)
+    }
 
   return (
     <div className='mt-12'>
-        <div className='flex gap-10 flex-wrap justify-center items-center text-center'>
-            {categories.map(
+        <div className='flex gap-10 flex-col justify-between items-center text-center'>
+            <div className='flex gap-10 flex-wrap justify-center items-center text-center'>
+                    {categories.map(
                 (el, index) => {
                     return(
                         <button
-                        onClick={() => setCats(el)}
+                        onClick={() => anomaly(el)}
                         className='bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl'
                         >{el}</button>
                     )
                 }
             )}
+            </div>
+
+            
+            <div className='bg-[#3C9379] p-2 rounded-3xl'>
+                <label className='text-[18px]' htmlFor="">Search: </label>
+                <input 
+                onChange={(e) => setSearch(e.target.value)}
+                className='border-2 rounded-3xl px-4 py-2' type='text'/>
+            </div>
+            
+           
         </div>
         
 
         <div className='flex flex-wrap gap-10 mt-12 justify-center items-center'>
-            {filtered.map(
+            {toggle ? filtered.filter((item) => item.title.toLowerCase().includes(search)).map(
+                (el, index) => {
+                    return(
+                        <ProductCard data={el} key={index}/>
+                    )
+                }
+            ) : data.filter((item) => item.title.toLowerCase().includes(search)).map(
                 (el, index) => {
                     return(
                         <ProductCard data={el} key={index}/>
