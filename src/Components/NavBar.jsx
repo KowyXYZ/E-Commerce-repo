@@ -25,8 +25,8 @@ function NavBar() {
             <NavLink className='px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]' to='/'>Home</NavLink>
             <NavLink className='px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]' to='/about'>About</NavLink>
             <NavLink className='px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]' to='/products'>Products</NavLink>
-            <NavLink className='active relative px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]' to='/cart'>Cart</NavLink>
-            <p className='border-2 border-[black] drop-shadow-2xl bg-[#fff] absolute rounded-3xl px-2 top-2 right-[70px] '>{cart.length}</p>
+            <NavLink className='px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]' to='/cart'>Cart</NavLink>
+            <p className='border-2 border-[black] drop-shadow-2xl bg-[#fff] rounded-3xl px-2 top-2 right-[150px] '>Cart items: {cart.length}</p>
         </div>
       
 
