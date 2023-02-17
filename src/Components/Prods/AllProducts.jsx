@@ -40,10 +40,10 @@ function AllProducts() {
             <div className='flex gap-10'>
             <button
             onClick={() => setToggle(false)}
-            className='bg-[#fff]  border-[#3C9379] border-2 px-6  drop-shadow-2xl'
+            className='bg-[#fff]  border-[#3C9379] border-2 px-6  drop-shadow-2xl rounded-3xl'
             >All</button>
             
-            <div className='bg-[#fff] border-[#3c9379] border-2 p-2 rounded-3xl'>
+            <div className='bg-[#3c9379] border-[#3c9379] border-2 p-2 rounded-3xl'>
                 <label className='text-[18px] p-2' htmlFor="">Search: </label>
                 <input 
                 onChange={(e) => setSearch(e.target.value)}
@@ -51,13 +51,13 @@ function AllProducts() {
             </div>
             </div>
             
-            <div className='flex gap-10 flex-wrap justify-center items-center text-center'>
+            <div className='flex gap-4 flex-wrap justify-center items-center text-center'>
                     {categories.map(
                 (el, index) => {
                     return(
                         <button
                         onClick={() => anomaly(el)}
-                        className='bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl'
+                        className='bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl'
                         >{el}</button>
                     )
                 }
