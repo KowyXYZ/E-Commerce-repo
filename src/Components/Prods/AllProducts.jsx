@@ -6,6 +6,7 @@ import { getData } from '../../store/sliceProducts'
 import ProductCard from './ProductCard'
 import fetchCategories from '../../utilities/fetchCategories'
 import { getCategory } from '../../store/sliceCategory'
+import Pagination from './Pagination'
 
 
 function AllProducts() {
@@ -33,6 +34,14 @@ function AllProducts() {
         setCats(el)
         setToggle(true)
     }
+
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage, setPostsPerPage] = useState(12)
+
+    const lastPostIndex = currentPage * postsPerPage
+    const firstPostIndex = lastPostIndex - postsPerPage
+    const currentPosts = data.slice(firstPostIndex, lastPostIndex)
 
   return (
     <div className='mt-12'>
@@ -70,22 +79,33 @@ function AllProducts() {
            
         </div>
         
-
-        <div className='flex flex-wrap gap-10 mt-12 justify-center items-center'>
+<div className='flex flex-col'>
+<div className='flex flex-wrap gap-10 mt-12 justify-center items-center'>
             {toggle ? filtered.filter((item) => item.title.toLowerCase().includes(search)).map(
                 (el, index) => {
                     return(
                         <ProductCard data={el} key={index}/>
                     )
                 }
-            ) : data.filter((item) => item.title.toLowerCase().includes(search)).map(
+            ) : currentPosts.filter((item) => item.title.toLowerCase().includes(search)).map(
                 (el, index) => {
                     return(
-                        <ProductCard data={el} key={index}/>
+                        <div>
+                             <ProductCard data={el} key={index} />
+                            
+                        </div>
+                       
                     )
                 }
             )}
+            
         </div>
+        <div className='flex items-center justify-center'>
+              {!toggle ? <Pagination totalPosts={data.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/> : <div></div>}
+        </div>
+            
+</div>
+        
     </div>
   )
 }
