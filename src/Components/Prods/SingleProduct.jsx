@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useLoaderData, useParams } from 'react-router-dom'
 import { getCartItems } from '../../store/sliceCart'
-
+import { Rate } from 'antd';
 
 
 function SingleProduct() {
@@ -12,16 +12,14 @@ function SingleProduct() {
     const loader = useLoaderData()
 
     const dispatch = useDispatch()
-
-
-
+  
   return (
     <div>
       <div className='bg-[#3C9379] flex items-center justify-center drop-shadow-2xl mt-14 rounded-3xl p-12 flex-row gap-12'>
-        <div className='flex flex-col justify-center items-center'>
-          <p>In stock: {loader.stock}</p>
+        <div className='flex flex-col justify-center items-center space-y-4'>
           <img className='rounded-2xl object-contain h-56 w-96' src={loader.thumbnail} alt="sslikica" />
-          <p>Rating: {loader.rating} / 5</p>
+          <Rate disabled defaultValue={loader.rating} />
+          <p>Rating: {loader.rating}</p>
         </div>
         
         <div className='flex flex-col items-center text-center justify-center text-[18px] space-y-4'>

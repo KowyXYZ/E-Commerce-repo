@@ -35,6 +35,11 @@ function AllProducts() {
         setToggle(true)
     }
 
+    const allCats = (ele) => {
+        setToggle(false)
+        setCurrentPage(1)
+    }
+
 
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage, setPostsPerPage] = useState(12)
@@ -48,7 +53,7 @@ function AllProducts() {
         <div className='flex gap-10 flex-col justify-between items-center text-center'>
             <div className='flex gap-10'>
             <button
-            onClick={() => setToggle(false)}
+            onClick={() => allCats()}
             className='bg-[#fff]  border-[#3C9379] border-2 px-6  drop-shadow-2xl rounded-3xl'
             >All</button>
             
