@@ -67,7 +67,7 @@ function AllProducts() {
                 <label className='text-[18px] p-2' htmlFor="">Search: </label>
                 <input 
                 onChange={(e) => setSearch(e.target.value)}
-                className='border-2 border-[#000] rounded-3xl px-4 py-2' type='text'/>
+                className='border-2 text-[black] border-[#000] rounded-3xl px-4 py-2' type='text'/>
             </div>
             </div>
             

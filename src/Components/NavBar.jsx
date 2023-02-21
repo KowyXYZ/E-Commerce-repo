@@ -37,7 +37,7 @@ function NavBar() {
             <NavLink className={isActive ? 'px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#fff]' : 'px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]'} to='/cart'>Cart</NavLink>
             <p className={isActive ? 'border-2 border-[#fff] px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#fff]' : 'border-2 border-[#3c9379] px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#535A56]'}>Cart items: {cart.length}</p>
             <button>
-              {isActive ? <img className='w-[50px]' onClick={() => dispatch(setActive(false))} src={lightMode}/> : <img className='w-[50px]' onClick={() => dispatch(setActive(true))} src={darkMode}/>}
+              {isActive ? <img className='w-[50px]' onClick={() => dispatch(setActive(false))} src={darkMode}/> : <img className='w-[50px]' onClick={() => dispatch(setActive(true))} src={lightMode}/>}
             </button>
         </div>
       
