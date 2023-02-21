@@ -18,7 +18,7 @@ function Categories() {
                 (el, index) => {
                   return (
                     <Link to='/products'>
-                    <div key={index} className='flex w-[250px] h-[250px] bg-[#3c9379] font-semibold items-center justify-center rounded-3xl'>
+                    <div key={index} className='flex w-[250px] h-[250px] bg-[#3c9379] font-semibold items-center justify-center rounded-3xl hover:bg-[#39ac89]'>
                       <h1 key={index}>{el}</h1>
                     </div>
                     </Link>
@@ -27,7 +27,7 @@ function Categories() {
               )}
           </div>
             <div className='flex items-center justify-center '>
-              <Link to='/products' className='transition-all ease-in-out delay-100 text-center border-2 border-[#3C9379] bg-[#3C9379] text-[#fff] px-6 py-2 rounded-3xl hover:bg-[#fff] hover:text-[#3C9379]'>See more...</Link>
+              <Link to='/products' className='transition-all ease-in-out delay-100 text-center border-2 border-[#3C9379] bg-[#3C9379] text-[#fff] px-6 py-2 rounded-3xl '>See more...</Link>
             </div>
             
         </div>

@@ -2,14 +2,17 @@ import React from 'react'
 
 import Logo from '../Assets/NavBar/Logo.png'
 
+
+
 function Footer() {
+  
   return (
     
     <div className='flex flex-col'>
         <div className='flex justify-between items-center'>
       <div className='space-y-4'>
         <img src={Logo} alt="" />
-        <p className='text-[#535A56] text-start w-[500px]'>Bachira is an online store dealing with all product
+        <p className=' text-start w-[500px]'>Bachira is an online store dealing with all product
 Bachira provide cheap, high quality, products to
 customers</p>
       </div>

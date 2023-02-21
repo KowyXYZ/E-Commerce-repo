@@ -31,7 +31,8 @@ function TopProducts() {
         <div className='flex justify-center items-center container mx-auto '>
             <Swiper
             slidesPerView={3}
-            centeredSlides={true}
+ 
+  
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,

@@ -13,13 +13,15 @@ const sliceCart =  createSlice({
         getCartItems: (state, action) => {
             const getIndex = state.cart.findIndex((item) => item.id  === action.payload.id)
             
+           
             if (getIndex >= 0) {
                 state.cart[getIndex].cartItems += 1
-            } else {
+            }  else {
                 const tempProd = {...action.payload, cartItems: 1}
                 state.cart.push(tempProd)
             }
             localStorage.setItem('cartItems', JSON.stringify(state.cart))
+            
         },
 
         removeFromCart: (state, action) => {

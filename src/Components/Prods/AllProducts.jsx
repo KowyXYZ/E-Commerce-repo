@@ -30,6 +30,8 @@ function AllProducts() {
     
     const [toggle, setToggle] = useState(false)
 
+    const [catsEn, setCatsEn] = useState(false)
+
     const anomaly = (el) => {
         setCats(el)
         setToggle(true)
@@ -48,14 +50,18 @@ function AllProducts() {
     const firstPostIndex = lastPostIndex - postsPerPage
     const currentPosts = data.slice(firstPostIndex, lastPostIndex)
 
+    const { isActive } = useSelector((state) => state.background)
+
+
   return (
     <div className='mt-12'>
         <div className='flex gap-10 flex-col justify-between items-center text-center'>
             <div className='flex gap-10'>
-            <button
-            onClick={() => allCats()}
-            className='bg-[#fff]  border-[#3C9379] border-2 px-6  drop-shadow-2xl rounded-3xl'
-            >All</button>
+
+            {catsEn ? <button 
+                className='border-2 border-red-500 px-3 py-2 rounded-3xl'
+                onClick={() => setCatsEn(!catsEn)}>Close Categories</button> : <button className='border-2 border-[#3c9379] px-3 py-2 rounded-3xl' onClick={() => setCatsEn(!catsEn)}>Show Categories</button>}
+            
             
             <div className='bg-[#3c9379] border-[#3c9379] border-2 p-2 rounded-3xl'>
                 <label className='text-[18px] p-2' htmlFor="">Search: </label>
@@ -65,17 +71,23 @@ function AllProducts() {
             </div>
             </div>
             
+
+
             <div className='flex gap-4 flex-wrap justify-center items-center text-center'>
-                    {categories.map(
+            {catsEn ? <button
+            onClick={() => allCats()}
+            className={isActive ? 'bg-[#3C9379] border-[#fff] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl' : 'bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl'}
+            >All</button> : <></>}
+                    {catsEn ? categories.map(
                 (el, index) => {
                     return(
                         <button
                         onClick={() => anomaly(el)}
-                        className='bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl'
+                        className={isActive ? 'bg-[#3C9379] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl' : 'bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl'}
                         >{el}</button>
                     )
                 }
-            )}
+            ) : <></>}
             </div>
 
             

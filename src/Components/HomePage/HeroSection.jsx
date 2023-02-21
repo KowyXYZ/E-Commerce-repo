@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
@@ -6,12 +7,14 @@ import { Link } from 'react-router-dom'
 import hero from '../../Assets/HeroSection/Hero.png'
 
 function HeroSection() {
+  const { isActive } = useSelector((state) => state.background)
+
   return (
     <div className='flex justify-center md:justify-between items-center mt-12'>
     
          <div className='space-y-6'>
-                <h1 className='text-[#3C9379] text-[25px] md:text-[50px] font-semibold'>
-             <span className='text-[black]'>Best Place to Buy<br/></span>
+                <h1 className=' text-[#3C9379] text-[25px] md:text-[50px] font-semibold'>
+             <span className={isActive ? "text-[white]" : 'text-[black]'}>Best Place to Buy<br/></span>
                 Everything.</h1>
 
                 <p className='w-[500px]'>At Bachira, you can shop for all your favorite beauty brands, clothes,
