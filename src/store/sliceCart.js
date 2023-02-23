@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { json } from "react-router-dom";
-
 
 const sliceCart =  createSlice({
     name: 'carts',

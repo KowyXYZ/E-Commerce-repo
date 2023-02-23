@@ -23,7 +23,7 @@ function HeroSection() {
                 
                 <button
                
-               className='transition-all ease-in-out delay-100 text-[20px] px-3 py-2 border-2 border-[#3C9379] bg-[#3C9379] text-[#fff] rounded-2xl hover:bg-[#fff] hover:text-[#3C9379] mt-12'>Shopping Now</button>
+               className='transition-all ease-in-out delay-100 text-[20px] px-3 py-2 border-2 border-[#3C9379] bg-[#3C9379] text-[#fff] rounded-2xl hover:bg-[#4c7e6f] hover:text-[#fff] hover:border-[#4c7e6f] mt-12'>Shopping Now</button>
                 </Link>
 
          </div>
