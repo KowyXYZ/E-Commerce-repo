@@ -21,7 +21,7 @@ function CartDisplay() {
     <div>
 
       {cart.length > 0 ? <div>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center md:flex-row flex-col'>
         <button
        onClick={() => dispatch(removeAllCart())}
        className='mt-12 bg-[#3C9379] py-2 px-3 text-[white] rounded-2xl text-[20px]'>Remove All Items</button>

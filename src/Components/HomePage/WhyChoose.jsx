@@ -11,7 +11,7 @@ function WhyChoose() {
   return (
     <div className='flex items-center flex-col justify-center mt-12'>
         <h1 className='font-semibold text-[30px]'>Why Choose Ba<span className='text-[#3C9379]'>chira?</span></h1>
-        <div className='flex mt-12'>
+        <div className='flex md:flex-row flex-col mt-12 gap-14 md:gap-0'>
             <div className='flex flex-col space-y-3 items-center justify-center text-center'>
                 <img className='w-[80px]' src={firstIcon} alt="icon" />
                 <p className='font-bold'>Free Delivery</p>

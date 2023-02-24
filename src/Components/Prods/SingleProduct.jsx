@@ -19,9 +19,9 @@ function SingleProduct() {
 
   return (
     <div>
-      <div className={isActive ? 'bg-[#303030] flex items-center justify-center drop-shadow-2xl mt-14 rounded-3xl p-12 flex-row gap-12 text-[#d6d6d6]' : 'bg-[#3C9379] flex items-center justify-center drop-shadow-2xl mt-14 rounded-3xl p-12 flex-row gap-12'}>
+      <div className={isActive ? 'bg-[#303030] flex items-center justify-center drop-shadow-2xl mt-14 rounded-3xl md:mx-0 mx-4 p-12 flex-col md:flex-row gap-12 text-[#d6d6d6]' : 'bg-[#3C9379] flex items-center justify-center drop-shadow-2xl mt-14 rounded-3xl p-12 flex-col md:flex-row gap-12 md:mx-0 mx-4'}>
         <div className='flex flex-col justify-center items-center space-y-4'>
-          <img className='rounded-2xl object-contain h-56 w-96' src={loader.thumbnail} alt="sslikica" />
+          <img className='md:rounded-2xl md:object-contain w-[250px] md:h-56 md:w-96' src={loader.thumbnail} alt="sslikica" />
           <Rate disabled defaultValue={loader.rating} />
           <p>Rating: {loader.rating}</p>
         </div>
@@ -35,7 +35,7 @@ function SingleProduct() {
           <div className='p-4'>
          <button 
          onClick={() => dispatch(getCartItems(loader))}
-         className='transition-all delay-75 ease-in-out bg-[#fff] px-24 py-2 rounded-3xl hover:bg-[#3c9379] border-2 border-[#fff] text-black' >Add To Cart</button>
+         className='transition-all delay-75 ease-in-out bg-[#fff] md:px-24 px-12 py-2 rounded-3xl hover:bg-[#e3e3e3] border-2 border-[#fff] text-black' >Add To Cart</button>
         </div>
         </div>
        

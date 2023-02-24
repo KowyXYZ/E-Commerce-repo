@@ -27,10 +27,42 @@ function TopProducts() {
 
   return (
     <div className='flex flex-col justify-center items-center mt-32'>   
-        <h1 className='font-semibold text-[25px]'>Populer Products From All Brands</h1>
-        <div className='flex justify-center items-center container mx-auto '>
+        <h1 className='font-semibold text-center  text-[25px]'>Populer Products From All Brands</h1>
+        <div className='hidden md:flex justify-center items-center container mx-auto '>
             <Swiper
             slidesPerView={3}
+ 
+  
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Navigation, Pagination,]}
+            className='w-screen'
+            >
+
+            {sliced?.map(
+              (el, index) => {
+                return(
+                  <SwiperSlide key={index}>
+                  <TopProductsSingle data={el} key={index}/>
+                  </SwiperSlide>
+                )
+              }
+            )}
+
+        
+          </Swiper>
+
+        </div>
+
+        <div className='md:hidden flex justify-center items-center container mx-auto '>
+            <Swiper
+            slidesPerView={1}
  
   
             autoplay={{

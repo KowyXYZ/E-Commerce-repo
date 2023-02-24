@@ -10,17 +10,20 @@ function CartCard( {data} ) {
 
 
   return (
-    <div className={isActive ? 'flex flex-row items-center justify-center bg-[#303030] p-12 rounded-2xl my-12 text-[#d6d6d6] font-semibold' : 'flex flex-row items-center justify-center bg-[#3C9379] p-12 rounded-2xl my-12 font-semibold'}>
+    <div className={isActive ? 'flex flex-col md:flex-row items-center justify-center bg-[#303030] p-12 rounded-2xl my-12 text-[#d6d6d6] font-semibold' : 'flex flex-row items-center justify-center bg-[#3C9379] p-12 rounded-2xl my-12 font-semibold'}>
         <Link to={`/products/product/${data.id}`}>
         <div className='flex items-center justify-center flex-col space-y-2'>
                 <h1>{data.title}</h1>
-                <img className='object-contain h-56 w-96' src={data.thumbnail} alt="slicica" />
+                <img className='w-[350px] md:object-contain md:h-56 md:w-96' src={data.thumbnail} alt="slicica" />
         </div>
         </Link>
         
           
-        <div className='flex gap-24 items-center justify-center'>
+        <div className='flex md:gap-24 gap-4 items-center justify-center md:flex-row flex-col mt-12 md:mt-0'>
             <p>Price: ${data.price}</p>
+
+
+            <div className='flex md:gap-24 gap-4 items-center justify-center md:py-0 py-4'>
             <p
             className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold text-[25px] text-black'
             onClick={() => dispatch(getCartItems(data))}>+</p>
@@ -28,6 +31,9 @@ function CartCard( {data} ) {
             <p
               className='border-2 border-[#fff] px-2 rounded-3xl bg-[#fff] font-bold text-[25px] flex-1 text-black'
             onClick={() => dispatch(decreaseCartItem(data))}>-</p>
+            </div>  
+
+            
             <p>Total: ${data.price * data.cartItems}</p>
             <p 
             onClick={() => dispatch(removeFromCart(data))}

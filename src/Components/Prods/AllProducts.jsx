@@ -56,7 +56,7 @@ function AllProducts() {
   return (
     <div className='mt-12'>
         <div className='flex gap-10 flex-col justify-between items-center text-center'>
-            <div className='flex gap-10'>
+            <div className='flex gap-10 md:flex-row flex-col mx-4 md:mx-0'>
 
             {catsEn ? <button 
                 className='border-2 border-red-500 px-3 py-2 rounded-3xl'
@@ -73,7 +73,7 @@ function AllProducts() {
             
 
 
-            <div className='flex gap-4 flex-wrap justify-center items-center text-center'>
+            <div className='flex gap-4 flex-wrap  justify-center items-center text-center'>
             {catsEn ? <button
             onClick={() => allCats()}
             className={isActive ? 'bg-[#3C9379] border-[#fff] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl' : 'bg-[#fff] border-[#3C9379] border-2 px-3 py-2 drop-shadow-2xl rounded-3xl'}
@@ -97,7 +97,7 @@ function AllProducts() {
         </div>
         
 <div className='flex flex-col'>
-<div className='flex flex-wrap gap-10 mt-12 justify-center items-center'>
+<div className='flex flex-wrap gap-10 mt-12 justify-center items-center mx-4 md:mx-0'>
             {toggle ? filtered.filter((item) => item.title.toLowerCase().includes(search)).map(
                 (el, index) => {
                     return(
@@ -117,7 +117,7 @@ function AllProducts() {
             )}
             
         </div>
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center text-center'>
               {!toggle ? <Pagination totalPosts={data.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/> : <div></div>}
         </div>
             

@@ -8,18 +8,18 @@ function Footer() {
   
   return (
     
-    <div className='flex flex-col'>
-        <div className='flex justify-between items-center'>
-      <div className='space-y-4'>
+    <div className='flex flex-col items-center justify-center'>
+        <div className='flex justify-between items-center text-center md:flex-row flex-col'>
+      <div className='space-y-4 flex items-center justify-center flex-col mb-12'>
         <img src={Logo} alt="" />
-        <p className=' text-start w-[500px]'>Bachira is an online store dealing with all product
+        <p className=' text-center md:text-start w-[300px] md:w-[500px]'>Bachira is an online store dealing with all product
 Bachira provide cheap, high quality, products to
 customers</p>
       </div>
 
 
 
-      <div className='flex gap-10'>
+      <div className='flex gap-10 flex-col md:flex-row'>
         <div>
             <h1>For Begginer</h1>
             <div className='text-[16px] font-light space-y-1 mt-2'>   
