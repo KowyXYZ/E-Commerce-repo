@@ -27,6 +27,10 @@ function NavBar() {
 
   const [toggle, setToggle] = useState(false)
   
+  const anon = () => {
+
+  }
+
 
   return (
     <div className='flex justify-between flex-row mx-10 relative '>
@@ -53,13 +57,13 @@ function NavBar() {
         </div>
       
         <div className='md:hidden flex items-center justify-center'>
-          {!toggle ? <img onClick={() => setToggle(true)} className='w-[50px]' src={ham}/> : <img className='w-[50px]' onClick={() => setToggle(false)} src={close}/>}
+          {!toggle ? <img onClick={() => setToggle(!toggle)} className='w-[50px]' src={ham}/> : <img className='w-[50px]' onClick={() => setToggle(!toggle)} src={close}/>}
           <div className='md:hidden flex flex-col  space-y-2 w-full z-10 bg-[#fff] items-center justify-center text-center'>
               {toggle ? <div className='absolute top-16 left-[2px] flex flex-col  space-y-2 w-full bg-[#fff] border-2 border-[#fff] items-center justify-center text-center text-[20px]'>
-                <NavLink className='bg-[#3c9379] w-full p-4' to='/'>Home</NavLink>
-                <NavLink className='bg-[#3c9379] w-full p-4' to='/about'>About</NavLink>
-                <NavLink className='bg-[#3c9379] w-full p-4' to='/products'>Products</NavLink>
-                <NavLink className='bg-[#3c9379] w-full p-4' to='/cart'>Cart</NavLink>
+                <NavLink className='bg-[#3c9379] w-full p-4' onClick={() => setToggle(false)} to='/'>Home</NavLink>
+                <NavLink className='bg-[#3c9379] w-full p-4' onClick={() => setToggle(false)} to='/about'>About</NavLink>
+                <NavLink className='bg-[#3c9379] w-full p-4' onClick={() => setToggle(false)} to='/products'>Products</NavLink>
+                <NavLink className='bg-[#3c9379] w-full p-4' onClick={() => setToggle(false)} to='/cart'>Cart</NavLink>
                 <div className='flex p-4 bg-[#3c9379]  gap-10 items-center justify-center w-full'>
                 <p className={isActive ? 'border-2 bg-[#3c9379] px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#fff]' : 'border-2 border-[#fff] px-3 py-2 rounded-3xl transition-all ease-in-out delay-100 text-[#fff]'}>Cart items: {cart.length}</p>
                 <button className=' items-center justify-center text-center'>

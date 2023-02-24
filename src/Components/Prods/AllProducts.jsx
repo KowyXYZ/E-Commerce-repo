@@ -56,7 +56,7 @@ function AllProducts() {
   return (
     <div className='mt-12'>
         <div className='flex gap-10 flex-col justify-between items-center text-center'>
-            <div className='flex gap-10 md:flex-row flex-col mx-4 md:mx-0'>
+            <div className='flex gap-10 md:flex-row flex-col mx-6 md:mx-0'>
 
             {catsEn ? <button 
                 className='border-2 border-red-500 px-3 py-2 rounded-3xl'
